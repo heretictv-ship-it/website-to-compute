@@ -1,56 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="https://glitch.com/favicon.ico" />
-
-  <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-  <title>Hello World!</title>
-
-  <!-- The website stylesheet -->
-  <link rel="stylesheet" href="/style.css" />
-
-  <!-- The website JavaScript file -->
-  <script src="/script.js" defer></script>
+  <title>Antaria — Free Demo Download | Aleksander Jerzy Antoni Gutowski</title>
+  <meta name="description" content="Official page of the Antaria project. Download the free demo, read about the world and follow updates." />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Antaria — Free Demo Download" />
+  <meta property="og:description" content="Download the free Antaria demo and discover the universe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://your-address-here/" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Antaria — Free Demo Download" />
+  <meta name="twitter:description" content="Download the free Antaria demo and discover the universe." />
+  <meta name="twitter:image" content="/og-image.jpg" />
+  <!-- JSON-LD (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWorkSeries",
+    "name": "Antaria",
+    "author": {
+      "@type": "Person",
+      "name": "A.J.A. Gutowski"
+    },
+    "url": "https://your-address-here/",
+    "sameAs": [
+      "https://www.youtube.com/@Aleister", 
+      "https://www.instagram.com/a.j.a.gutowski/"
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#0b0e13; --fg:#eef2f7; --muted:#9aa4b2; --accent:#e11d48; --accent-2:#22d3ee; --card:#111827; --stroke:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";background:
+      radial-gradient(1200px 800px at 20% -10%, rgba(34,211,238,.12), transparent 60%),
+      radial-gradient(1000px 700px at 120% 10%, rgba(225,29,72,.12), transparent 50%),
+      linear-gradient(rgba(11,14,19,.85), rgba(11,14,19,.85)),
+      url('/world-map.webp');
+    background-size: auto, auto, cover, cover;
+    background-position: center, center, center, center;
+    background-attachment: fixed, fixed, fixed, fixed;
+    color:var(--fg)}
+    .wrap{max-width:980px;margin:0 auto;padding:32px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--stroke)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(145deg,var(--accent),var(--accent-2));filter:drop-shadow(0 6px 14px rgba(34,211,238,.25))}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:0}
+    .muted{color:var(--muted)}
+    main{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;padding:28px 0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--card);border:1px solid var(--stroke);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card .in{padding:24px}
+    .hero-kicker{display:inline-block;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+    .hero-title{font-size:clamp(30px,5vw,56px);line-height:1.06;margin:14px 0 10px}
+    .hero-sub{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer;transition:transform .06s ease, box-shadow .2s ease}
+    .btn-primary{background:linear-gradient(135deg, var(--accent), #b91c1c);color:white;box-shadow:0 8px 20px rgba(225,29,72,.35)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{background:transparent;border:1px solid var(--stroke);color:var(--fg)}
+    .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+    .chip{font-size:12px;color:var(--muted);border:1px dashed var(--stroke);padding:6px 10px;border-radius:999px}
+    .aside h3{margin:0 0 8px}
+    .list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .list li{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--stroke);border-radius:12px}
+    .bullet{width:8px;height:8px;border-radius:3px;background:linear-gradient(135deg,var(--accent-2),#60a5fa);margin-top:7px}
+    footer{border-top:1px solid var(--stroke);padding:24px 0;color:var(--muted)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+    .gallery div{aspect-ratio:16/9;border-radius:12px;background:linear-gradient(135deg,#0ea5e9, #e11d48);opacity:.25}
+    @media (max-width:940px){main{grid-template-columns:1fr;}}
+  </style>
 </head>
-
 <body>
-  <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-  <div class="wrapper">
-    <div class="content" role="main">
-      <h1 class="title">Oh hi website!</h1>
-      <img src="/cool-website.svg" class="illustration" alt="cool website" />
-      <div class="instructions">
-        <p>
-          Fork <a href="https://github.com/glitchdotcom/website-to-compute">this project</a> and open it in a GitHub Codespace.
-        </p>
-        <p> Follow the steps in the README to deploy your new website to Fastly in a few steps!
-        </p>
-
-      </div>
-
-      <footer class="footer">
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
         <div>
-          <a class="remix" href="https://github.com/glitchdotcom/website-to-compute">🚧 Get your own site</a>
+          <strong>Antaria</strong><br/>
+          <span class="muted">Official Project Page</span>
         </div>
-      </footer>
-    </div>
-  </div>
-</body>
+      </div>
+      <nav class="muted">A.J.A. Gutowski</nav>
+    </header>
 
+    <main>
+      <!-- HERO / DOWNLOAD -->
+      <!-- Note: to enable the background map, upload the file into public/ as public/world-map.webp -->
+      <section class="card">
+        <div class="in">
+          <span class="hero-kicker">Free Demo</span>
+          <h2 class="hero-title">Enter the World of Antaria</h2>
+          <p class="hero-sub">Download a free demo (book excerpt / game build / audio material) and see where the Red Testament leads.</p>
+          <div class="cta">
+            <!-- Note: upload file to public/demo/ e.g. public/demo/antaria-demo.zip -->
+            <a class="btn btn-primary" href="/demo/antaria-demo.zip" download>
+              ⬇ Download Demo (ZIP)
+            </a>
+            <a class="btn btn-ghost" href="#about">Learn More</a>
+          </div>
+          <div class="meta">
+            <span class="chip">Version: 0.1</span>
+            <span class="chip">Size: ~50 MB</span>
+            <span class="chip">License: Free demo</span>
+          </div>
+          <div class="gallery" aria-hidden="true">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ASIDE / LINKS -->
+      <aside class="aside">
+        <div class="card"><div class="in">
+          <h3>Links & Community</h3>
+          <ul class="list">
+            <li><span class="bullet"></span> <a href="https://youtube.com" target="_blank" rel="noopener">YouTube (Aleister)</a></li>
+            <li><span class="bullet"></span> <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><span class="bullet"></span> <a href="https://medium.com" target="_blank" rel="noopener">Articles / lore</a></li>
+          </ul>
+        </div></div>
+        <div class="card" style="margin-top:12px"><div class="in">
+          <h3>News</h3>
+          <ul class="list">
+            <li><span class="bullet"></span> 04.09.2025 – Demo site launched.</li>
+            <li><span class="bullet"></span> 18.08.2025 – First Red Testament materials released.</li>
+          </ul>
+        </div></div>
+      </aside>
+
+      <!-- ABOUT -->
+      <section id="about" class="card">
+        <div class="in">
+          <h2>About the Project</h2>
+          <p><strong>Antaria</strong> is an original universe combining advanced technology, mysticism, and civilizational conflicts. The project spans prose, music, and interactive elements. This page provides quick access to the free demo and news.</p>
+          <h3>What’s included in the demo?</h3>
+          <ul>
+            <li>Excerpt from the book <em>Antaria: The Red Testament</em> (PDF/EPUB),</li>
+            <li>Game build / prototype (Windows/macOS) — optional,</li>
+            <li>Soundtracks (MP3/FLAC) — optional.</li>
+          </ul>
+          <p>Feedback or collaboration? Contact: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Aleksander Jerzy Antoni Gutowski — Antaria
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
